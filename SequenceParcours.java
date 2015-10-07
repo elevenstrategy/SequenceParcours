@@ -1,3 +1,21 @@
+/*
+ * Modified from apache/incubator-datafu/v0.0.9/./src/java/datafu/pig/bags/Enumerate.java
+ *
+ * Enumerate.java is Copyright 2010 LinkedIn, Inc
+ * 
+ * Enumerate.java is Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
 package parcours;
 
 import java.io.IOException;
@@ -11,7 +29,7 @@ import org.apache.pig.data.TupleFactory;
 import org.apache.pig.impl.logicalLayer.FrontendException;
 import org.apache.pig.impl.logicalLayer.schema.Schema;
 
-public class SequenceParcoursGus extends AccumulatorEvalFunc<DataBag>
+public class SequenceParcours extends AccumulatorEvalFunc<DataBag>
 {
   private final int start;
   
@@ -21,12 +39,12 @@ public class SequenceParcoursGus extends AccumulatorEvalFunc<DataBag>
   private long nevents;
   private String tampon;
 
-  public SequenceParcoursGus()
+  public SequenceParcours()
   {
     this("0");
   }
 
-  public SequenceParcoursGus(String start)
+  public SequenceParcours(String start)
   {
     this.start = Integer.parseInt(start);
     cleanup();
